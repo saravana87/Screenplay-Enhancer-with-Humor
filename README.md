@@ -36,3 +36,37 @@ Useful for anyone running a store and sending price alerts via email — users c
     OpenAI API key
 
     Gmail account with Gmail API enabled
+
+📦 Setup Instructions
+
+    Clone this repo
+
+    Install dependencies:
+
+pip install -r requirements.txt
+
+    Create a .env file in the root with your OpenAI key:
+
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxx
+
+    Export your product data to products.csv
+
+    Set up Gmail API:
+
+        Go to https://console.cloud.google.com
+
+        Enable Gmail API
+
+        Download OAuth credentials as client_secret.json
+
+    Run the responder:
+
+python gmail_responder.py
+
+📁 File Structure
+File	Purpose
+gmail_responder.py	Main script to monitor Gmail + send replies
+index_loader.py	Loads and indexes product data using LlamaIndex
+products.csv	Your product price/inventory dataset
+.env	Stores your OpenAI API key
+
